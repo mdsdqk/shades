@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+	--accent-color: #da543c;
+}
+
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+.container {
+	display: grid;
+	margin: auto;
+	min-height: 0;
+	min-width: 0;
+	aspect-ratio: 1/1;
+}
+
+@media (orientation: landscape) {
+	.container {
+		height: 70vh;
+		max-width: 80vw;
+	}
+}
+
+@media (orientation: portrait) {
+	.container {
+		width: 80vw;
+		max-width: 70vh;
+	}
+}
+
+.item {
+	aspect-ratio: 1/1;	
+	border: 1px solid #fff;	
+	cursor: pointer;
+
+	/* to prevent overflow of items from grid */
+	overflow: hidden; 
+  min-width: 0;
+}
+
+@media (orientation: landscape) {
+	.item {
+		height: 100%;
+	}
+}
+
+@media (orientation: portrait) {
+	.item {
+		width: 100%;
+	}
+}
+
+header {
+	text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: small;
+  margin: 0.5rem;
+  margin-top: 2rem;
+}
+
+.name {
+	color: var(--accent-color);
+}
+
+/* animations */
+
+.shake {
+  animation: shake 0.8s;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  0% {transform: translateX(0);} 
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-8px);} 
+  20%, 40%, 60%, 80%,100% {transform: translateX(8px);} 
+} 
+
+/* utilities */
+.m-4 {
+  margin: 2rem;
+}
