@@ -37,7 +37,8 @@ function createGrid(size) {
   }
 
   const diffElement = document.getElementById(`item${diffElem}`);
-  diffElement.style.background = getDiffColor();
+  diffElement.style.background = getShade(0.75);
+  document.querySelector('body').style.background = getShade(0.1);
 }
 
 function getRandomInt(min, max) {
@@ -57,8 +58,8 @@ function getColor() {
 
 }
 
-function getDiffColor() {
-	return `rgba(${color.red}, ${color.green}, ${color.blue}, 0.75)`;
+function getShade(percentage) {
+	return `rgba(${color.red}, ${color.green}, ${color.blue}, ${percentage})`;
 }
   
 function startGame() {
