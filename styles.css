@@ -10,11 +10,9 @@
 }
 
 .container {
-	display: grid;
 	margin: auto;
 	min-height: 0;
 	min-width: 0;
-	aspect-ratio: 1/1;
 }
 
 @media (orientation: landscape) {
@@ -22,12 +20,20 @@
 		height: 70vh;
 		max-width: 80vw;
 	}
+
+	.item {
+		height: 100%;
+	}
 }
 
 @media (orientation: portrait) {
 	.container {
 		width: 80vw;
 		max-width: 70vh;
+	}
+
+	.item {
+		width: 100%;
 	}
 }
 
@@ -41,18 +47,6 @@
   min-width: 0;
 }
 
-@media (orientation: landscape) {
-	.item {
-		height: 100%;
-	}
-}
-
-@media (orientation: portrait) {
-	.item {
-		width: 100%;
-	}
-}
-
 header {
 	text-align: center;	
 }
@@ -60,6 +54,18 @@ header {
 .title {
 	font-family: 'Permanent Marker', cursive;
 	color: #222222;
+}
+
+#scores {
+	margin: auto;
+	width: 70vmin;
+	font-size: small;
+}
+
+@media (min-width: 769px) {
+  #scores {
+    font-size: medium;
+  }
 }
 
 footer {
@@ -89,4 +95,28 @@ footer {
 /* utilities */
 .m-4 {
   margin: 2rem;
+}
+
+.grid {
+	display: grid;
+}
+
+.aspect-square {
+	aspect-ratio: 1/1;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.mr-2 {
+	margin-right: 0.5rem;
 }
